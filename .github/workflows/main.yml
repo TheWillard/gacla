@@ -19,6 +19,7 @@ jobs:
     - name: build
       run: |
         cd build
+        dir
         msbuild wil_gacla.sln
     - name: check
       run: |
