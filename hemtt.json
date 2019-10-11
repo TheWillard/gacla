@@ -1,0 +1,9 @@
+{
+  "name": "gacla",
+  "prefix": "wil",
+  "author": "Willard",
+  "files": [
+    "mod.cpp"
+  ],
+  "sigversion": 3
+}
