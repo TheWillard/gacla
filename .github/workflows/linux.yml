@@ -1,4 +1,4 @@
-name: win
+name: liunx
 
 on: [push]
 
