@@ -1,4 +1,4 @@
-name: liunx
+name: linux
 
 on: [push]
 
@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: packages
-        path: build/win64/Debug
+        path: build/src/wil_gacla_x64.so
