@@ -1,4 +1,4 @@
-name: CI
+name: win
 
 on: [push]
 
@@ -22,11 +22,6 @@ jobs:
         cd build
         dir
         msbuild wil_gacla.sln
-    - name: build
-      run: |
-        cd build
-        dir
-        make
     - name: check
       run: |
         cd build
