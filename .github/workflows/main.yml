@@ -19,19 +19,19 @@ jobs:
         cmake ..
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
-      if: ${{matrix.os == "windows-latest"}}
+      if: ${{matrix.os}} == "windows-latest"
     - name: build
       run: |
         cd build
         dir
         msbuild wil_gacla.sln
-      if: ${{matrix.os == "windows-latest"}}
+      if: ${{matrix.os}} == "windows-latest"
     - name: build
       run: |
         cd build
         dir
         make
-      if: ${{matrix.os == "ubuntu-latest"}}
+      if: ${{matrix.os}} == "ubuntu-latest"
     - name: check
       run: |
         cd build
