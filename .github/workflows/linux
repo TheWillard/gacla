@@ -1,0 +1,33 @@
+name: win
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: prepare
+      run: |
+        git submodule update --init --recursive
+        mkdir -p build
+        cd build
+        cmake ..
+    - name: build
+      run: |
+        cd build
+        dir
+        make
+    - name: check
+      run: |
+        cd build
+    - name: package
+      run: |
+        cd build
+    - name: archive results
+      uses: actions/upload-artifact@v1
+      with:
+        name: packages
+        path: build/win64/Debug
