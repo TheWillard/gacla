@@ -5,10 +5,8 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
+    runs-on: windows-latest
+    
     steps:
     - uses: actions/checkout@v1
     - name: prepare
@@ -19,19 +17,16 @@ jobs:
         cmake ..
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
-      if: ${{matrix.os}} == "windows-latest"
     - name: build
       run: |
         cd build
         dir
         msbuild wil_gacla.sln
-      if: ${{matrix.os}} == "windows-latest"
     - name: build
       run: |
         cd build
         dir
         make
-      if: ${{matrix.os}} == "ubuntu-latest"
     - name: check
       run: |
         cd build
